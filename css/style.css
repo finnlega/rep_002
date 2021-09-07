@@ -8,8 +8,9 @@ body {
     font-size: 16px;
     line-height: 20px;
     color: #AE7C78;
-    padding: 0%;
-    margin: 0%;
+    padding: 0;
+    margin: 0;
+  
 }
 
 .header-nav li{
@@ -41,6 +42,7 @@ body {
     margin-left: 120px;
     margin-right: 120px;
     padding: 0;
+    
 }
 .header_link {
     font-family: Montserrat;
@@ -159,6 +161,7 @@ h2 {
     margin-top: 80px;
     margin-left: 323px;
     margin-right: 323px;
+    width: 794px;
 }
 
 .popular_header{
