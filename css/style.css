@@ -10,7 +10,7 @@ body {
     color: #AE7C78;
     padding: 0;
     margin: 0;
-  
+    padding-top: 25px;
 }
 
 .header-nav li{
@@ -19,14 +19,9 @@ body {
 
 /* Стилизация навигации */
 
-.header-nav {
-    margin-top: 26px;
-   
-}
-
 .line_top {
     border-bottom: 1px solid #AE7C78;
-    margin-top: 26px;
+    
 }
 
 .line_bottom {
@@ -37,26 +32,40 @@ body {
 .list_item {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /*justify-content: space-between;*/
     margin-top: 22px;
     margin-left: 120px;
     margin-right: 120px;
     padding: 0;
+    width: 1200px;
+
     
 }
 .header_link {
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
     color: #AE7C78;
     text-decoration: none;
-    
 }
 
-.list_item li:nth-child(3) {
+.list_item li:nth-of-type(1) {
+    margin-right: 102px;
+}
+
+.list_item li:nth-of-type(2) {
+    margin-right: 101px;
+}
+
+.list_item li:nth-of-type(3) {
     margin-right: 224px;
+}
+
+.list_item li:nth-of-type(4),
+.list_item li:nth-of-type(5) {
+    margin-right: 89px;
 }
 
 .nav_logo {
@@ -100,7 +109,7 @@ body {
     text-align: center;
     background: #D89999;
     border-radius: 40px;
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -119,7 +128,7 @@ body {
 }
 
 .catalog_header {
-    font-family: Playfair Display;
+    font-family: Playfair Display, "Arial";
     font-style: normal;
     font-weight: normal;
     font-size: 44px;
@@ -136,7 +145,7 @@ body {
 }
 
 .description {
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -144,42 +153,49 @@ body {
 }
 
 h2 {
-    font-family: Playfair Display;
+    font-family: Playfair Display, "Arial";
     font-style: normal;
     font-weight: bold;
 }
 
 /* Стилизация блока ПОПУЛЯРНОЕ */
 
-.popular {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 546px;
-    padding: 0;
+.popular_wrapper {
+    display: grid;
+    grid-template-areas: 
+        "popular_header popular_header"
+        "popular_content popular_image"
+        "slider slider";
+    column-gap: 20px;
+    width: 794px;
     margin-top: 80px;
     margin-left: 323px;
-    margin-right: 323px;
-    width: 794px;
 }
 
 .popular_header{
     font-size: 36px;
     line-height: 48px;
     letter-spacing: 0.02em;
-    width: 400px;
     margin: 0;
+    text-align: center;
+    grid-area: popular_header;
+    grid-column: span 2;
 }
 
-.popular_wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 387px);
-    column-gap: 20px;
+.popular_content {
+    grid-area: popular_content;
+    display: flex;
+    flex-direction: column;
+    
 }
 
-.price {
-    font-family: Montserrat;
+.popular_image {
+    grid-area: popular_image;
+}
+
+
+.price  {
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -187,8 +203,8 @@ h2 {
     color: #AE7C78;
 }
 
-.h3 {
-    font-family: Montserrat;
+h3 {
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -196,7 +212,7 @@ h2 {
 }
 
 .popular_content .tenderness {
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -219,24 +235,31 @@ h2 {
     padding: 0;
     margin-top: 24px;
 }
-
-.slider {
-    display: flex;
-    width: 120px;
-    justify-content: space-around;
-    border-width: 0;
-    background: #FFFFFF;
+.popular_image {
+    margin-top: 36px;
 }
 
-.slider:hover {
-    width: 200px;
+.slider {
+    margin-top: 24px;
+    border-width: 0;
+    background: #FFFFFF;
+    height: 0;
+    grid-area: slider;
+    grid-column: span 2;
+    text-align: center;
 }
 
 .slider.left {
+    margin: 0;
+    padding: 0;
     margin-right: 20px;
 }
 
-/* Стилизация блока РАЗДЕЛЫ КАТАЛОГА */
+.slider.right {
+    margin: 0;
+    padding: 0;
+   
+}
 
 .categories_list {
     margin: 0;
@@ -260,7 +283,7 @@ h2 {
 }
 
 .categories_description {
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -338,7 +361,6 @@ li {
     line-height: 29px;
     color: #FFFFFF;
     margin: 0;
-    
 }
 
 /* Стилизация блока ПРЕИМУЩЕСТВА */
@@ -353,7 +375,7 @@ li {
                 url("../img/photo.svg") no-repeat left 835px top;
 }
 .benefit_main {
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: 500;
     display: grid;
@@ -376,7 +398,7 @@ li {
 .description_delivery, 
 .description_flowers, 
 .description_photo {
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -400,7 +422,7 @@ li {
 .steps_header {
     margin: 0;
     padding-left: 345px;
-    font-family: Playfair Display;
+    font-family: Playfair Display, "Arial";
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -410,7 +432,7 @@ li {
 }
 
 .steps_main {
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: 500;
     margin: 0;
@@ -430,7 +452,7 @@ li {
 .steps_main dd {
     order: 1;
     margin: 0;
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -457,7 +479,7 @@ li {
     padding: 0;
     margin: 0;
     margin-top: 70px;
-    font-family: Playfair Display;
+    font-family: Playfair Display, "Arial";
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -467,7 +489,7 @@ li {
 }
 
 .news_description {
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -520,7 +542,7 @@ li {
 }
 
 .reviews_header {
-    font-family: Playfair Display;
+    font-family: Playfair Display, "Arial";
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -543,8 +565,6 @@ li {
     text-align: center;
     margin-top: 40px;
     margin-bottom: 64px;
-    
-
 }
 
 .users_description {
@@ -555,7 +575,7 @@ li {
 
 .user {
     margin: 0;
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -588,12 +608,12 @@ li {
     padding-left: 35px;
     padding-top: 40px;
     padding-bottom: 65px;
-    justify-content: space-around;
+    justify-content: space-between;
     order: 10;
 }
 
 .contact_header {
-    font-family: Playfair Display;
+    font-family: Playfair Display, "Arial";
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -604,7 +624,7 @@ li {
 
 .card {
     width: 243px;
-    font-family: Montserrat;
+    font-family: Montserrat, "Arial";
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
